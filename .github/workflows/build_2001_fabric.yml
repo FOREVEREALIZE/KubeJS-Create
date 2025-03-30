@@ -50,8 +50,7 @@ jobs:
       - name: Move builds
         run: |
           mv build/libs/kubejs-create-fabric-2001.2.5-build.${{ github.run_number }}.jar build/libs/kjs-build.jar
-      - uses: mmkal/artifact.ci/upload@main
+      - uses: actions/upload-artifact@v4
         with:
+          name: kjs-build.jar
           path: build/libs/kjs-build.jar
-          artifactci-visibility: public
-          artifactci-mode: eager
